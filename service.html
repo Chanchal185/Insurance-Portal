@@ -1,0 +1,68 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Insurance Customer Self-Service Portal</title>
+    <link rel="stylesheet" href="service.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Insurance Customer Self-Service Portal</h1>
+            <nav>
+                <button onclick="showSection('fileClaim')">File a Claim</button>
+                <button onclick="showSection('trackClaims')">Track Claims</button>
+                <button onclick="showSection('chatbot')">Chatbot</button>
+                <button onclick="showSection('knowledgeBase')">Search Knowledge Base</button>
+            </nav>
+        </header>
+        <main>
+            <section id="fileClaim" class="hidden">
+                <h2>Submit a New Insurance Claim</h2>
+                <form id="claimForm">
+                    <label for="policyNumber">Policy Number:</label>
+                    <input type="text" id="policyNumber" required>
+                    <label for="incidentDate">Incident Date:</label>
+                    <input type="date" id="incidentDate" required>
+                    <label for="incidentDescription">Incident Description:</label>
+                    <textarea id="incidentDescription" required></textarea>
+                    <label for="fileUpload">Attach Files:</label>
+                    <input type="file" id="fileUpload" multiple>
+                    <button type="submit">Submit Claim</button>
+                </form>
+                <p id="formMessage"></p>
+            </section>
+            <section id="trackClaims" class="hidden">
+                <h2>Track Claim Status</h2>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Claim Number</th>
+                            <th>Status</th>
+                            <th>Date Submitted</th>
+                            <th>Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody id="claimsTableBody">
+                      
+                    </tbody>
+                </table>
+            </section>
+            <section id="chatbot" class="hidden">
+                <h2>Chat with Us (AI-Powered Chatbot)</h2>
+                <div id="chatContainer">
+                    <div id="chatMessages"></div>
+                    <input type="text" id="chatInput" placeholder="Type your message here...">
+                    <button id="sendMessage">Send</button>
+                </div>
+            </section>            
+            <section id="knowledgeBase" class="hidden">
+                <h2>Search Knowledge Base</h2>
+                <input type="text" id="searchBar" placeholder="Search...">
+                <div id="searchResults"></div>
+            </section>
+        </main>
+    </div>
+    <script src="service.js"></script>
+</body>
+</html>
